@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hotel Aurelia Odessa - Ваш ідеальний відпочинок на березі моря. Забронюйте преміум-номери за найкращими цінами.">
+    <title>Hotel Aurelia | Luxury Resort</title>
+    <link rel="preload" as="image" href="https://media.joinup.travel/storage/hotel/50541/photos/Panorama-De-Lyuks-3.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <div class="logo"><a href="#hero">Aurelia<span>Одеса</span></a></div>
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#about" data-i18n="nav_about">Про готель</a></li>
+                    <li><a href="#rooms" data-i18n="nav_rooms">Номери</a></li>
+                    <li><a href="#services" data-i18n="nav_services">Послуги</a></li>
+                    <li><a href="#offers" data-i18n="nav_offers">Акції</a></li>
+                    <li><a href="#gallery" data-i18n="nav_gallery">Галерея</a></li>
+                    <li><a href="#reviews" data-i18n="nav_reviews">Відгуки</a></li>
+                    <li><a href="#contacts" data-i18n="nav_contacts">Контакти</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="lang-switch"><span id="lang-uk" class="active">UK</span> | <span id="lang-en">EN</span></div>
+                <button id="btn-login" class="btn-outline" style="padding: 8px 15px; margin-left: 15px;" data-i18n="nav_login">Увійти</button>
+                <div class="user-profile-menu" style="display: none; margin-left: 15px;">
+                    <button class="btn-main btn-dashboard" style="padding: 8px 15px;"><i class="fas fa-user"></i> <span data-i18n="nav_profile">Кабінет</span></button>
+                </div>
+                <button class="burger-menu" id="burger-btn" aria-label="Відкрити меню"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <button class="close-menu" id="close-menu-btn"><i class="fas fa-times"></i></button>
+            <ul class="mobile-nav-links">
+                <li><a href="#about" data-i18n="nav_about">Про готель</a></li>
+                <li><a href="#rooms" data-i18n="nav_rooms">Номери</a></li>
+                <li><a href="#services" data-i18n="nav_services">Послуги</a></li>
+                <li><a href="#offers" data-i18n="nav_offers">Акції</a></li>
+                <li><a href="#gallery" data-i18n="nav_gallery">Галерея</a></li>
+                <li><a href="#reviews" data-i18n="nav_reviews">Відгуки</a></li>
+                <li><a href="#contacts" data-i18n="nav_contacts">Контакти</a></li>
+                <li><a href="#" id="mobile-login" data-i18n="nav_login">Увійти</a></li>
+                <li class="user-profile-menu" style="display: none;"><a href="#" class="btn-dashboard" data-i18n="nav_profile">Кабінет</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 data-i18n="hero_title">Берег моря. Затишок. AURELIA.</h1>
+            <p data-i18n="hero_subtitle">Ваш ідеальний відпочинок у самому серці Одеси</p>
+            <div class="booking-widget">
+                <div class="b-input-group">
+                    <div class="b-input"><label><i class="far fa-calendar-alt"></i> <span data-i18n="book_checkin">Заїзд</span></label><input type="date" id="checkin" required></div>
+                    <div class="b-input"><label><i class="far fa-calendar-check"></i> <span data-i18n="book_checkout">Виїзд</span></label><input type="date" id="checkout" required></div>
+                </div>
+                <div class="b-input-group">
+                    <div class="b-input"><label><i class="fas fa-user-friends"></i> <span data-i18n="book_adults">Дорослі</span></label><input type="number" id="adults" value="2" min="1" max="4"></div>
+                    <div class="b-input"><label><i class="fas fa-child"></i> <span data-i18n="book_children">Діти</span></label><input type="number" id="children" value="0" min="0" max="3"></div>
+                </div>
+                <div class="b-input promo-input">
+                    <label><i class="fas fa-tag"></i> <span data-i18n="book_promo">Промокод</span></label>
+                    <input type="text" id="promocode" placeholder="promo">
+                </div>
+                <button class="btn-main" id="calc-btn" data-i18n="book_btn">Знайти номери</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container section about-section">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2 class="section-title left-align" data-i18n="about_title">Ласкаво просимо до Aurelia</h2>
+                <p data-i18n="about_p1">Готель Aurelia — це поєднання сучасної розкоші та традиційної одеської гостинності. Наш готель пропонує неперевершений вид на Чорне море та сервіс преміум-класу.</p>
+                <p data-i18n="about_p2">Ми подбали про кожну деталь, щоб ваш відпочинок, ділова поїздка або сімейний вікенд пройшли ідеально.</p>
+                <div class="about-features">
+                    <span><i class="fas fa-check-circle"></i> <span data-i18n="feat_1">Перша лінія</span></span>
+                    <span><i class="fas fa-check-circle"></i> <span data-i18n="feat_2">Безкоштовний паркінг</span></span>
+                    <span><i class="fas fa-check-circle"></i> <span data-i18n="feat_3">Pet-friendly</span></span>
+                </div>
+                <a href="about.html" class="btn-outline" style="display:inline-block; margin-top:30px;" data-i18n="btn_read_more">Читати детальніше</a>
+            </div>
+            <div class="about-image glowing-wrapper">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800" alt="Лобі готелю Aurelia">
+            </div>
+        </div>
+    </section>
+
+    <section id="rooms" class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="nav_rooms">Наші Номери</h2>
+            <div class="room-filters">
+                <div class="filter-group">
+                    <label data-i18n="filter_sort">Сортування:</label>
+                    <select id="sort-rooms">
+                        <option value="default" data-i18n="filter_default">За популярністю</option>
+                        <option value="price-asc" data-i18n="filter_cheap">Від дешевих до дорогих</option>
+                        <option value="price-desc" data-i18n="filter_exp">Від дорогих до дешевих</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="rooms-carousel-wrapper">
+            <button class="carousel-btn prev-btn" id="room-prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="rooms-track" id="rooms-track">
+                
+                <div class="room-card" data-room="standard" data-price="1800">
+                    <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=800');"><span class="badge" data-i18n="badge_pop">Популярний</span></div>
+                    <div class="room-info">
+                        <h3 data-i18n="r1_title">Standard Classic</h3>
+                        <div class="room-amenities"><span><i class="fas fa-vector-square"></i> 25 м²</span><span><i class="fas fa-bed"></i> 1 Queen Bed</span><span><i class="fas fa-wifi"></i> Free Wi-Fi</span></div>
+                        <p data-i18n="r1_desc">Комфортний номер для двох з видом на місто або внутрішній двір.</p>
+                        <div class="room-footer">
+                            <span class="price"><span data-i18n="price_from">Від</span> <span class="val">1 800 ₴</span> <span>/ <span data-i18n="price_night">ніч</span></span></span>
+                            <button class="btn-outline book-room-btn" data-i18n="btn_book_now">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card" data-room="std_mod" data-price="1950">
+                    <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800');"></div>
+                    <div class="room-info">
+                        <h3 data-i18n="r2_title">Standard Modern</h3>
+                        <div class="room-amenities"><span><i class="fas fa-vector-square"></i> 28 м²</span><span><i class="fas fa-bed"></i> 1 Queen Bed</span><span><i class="fas fa-tv"></i> Smart TV</span></div>
+                        <p data-i18n="r2_desc">Світлий номер у сучасному стилі з оновленим дизайном.</p>
+                        <div class="room-footer">
+                            <span class="price"><span data-i18n="price_from">Від</span> <span class="val">1 950 ₴</span> <span>/ <span data-i18n="price_night">ніч</span></span></span>
+                            <button class="btn-outline book-room-btn" data-i18n="btn_book_now">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card" data-room="std_cozy" data-price="2100">
+                    <div class="room-img" style="background-image: url('https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2025/05/08/1000/SINSS-P0040-Cozy-Single.jpg/SINSS-P0040-Cozy-Single.16x9.jpg');"></div>
+                    <div class="room-info">
+                        <h3 data-i18n="r3_title">Standard Cozy</h3>
+                        <div class="room-amenities"><span><i class="fas fa-vector-square"></i> 30 м²</span><span><i class="fas fa-bed"></i> 1 King Bed</span><span><i class="fas fa-coffee"></i> Кавомашина</span></div>
+                        <p data-i18n="r3_desc">Просторий стандарт з покращеним плануванням та кавомашиною.</p>
+                        <div class="room-footer">
+                            <span class="price"><span data-i18n="price_from">Від</span> <span class="val">2 100 ₴</span> <span>/ <span data-i18n="price_night">ніч</span></span></span>
+                            <button class="btn-outline book-room-btn" data-i18n="btn_book_now">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card" data-room="family" data-price="3800">
+                    <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1560067174-c5a3a8f37060?q=80&w=800');"><span class="badge" data-i18n="badge_family">Для сім'ї</span></div>
+                    <div class="room-info">
+                        <h3 data-i18n="r4_title">Family Room</h3>
+                        <div class="room-amenities"><span><i class="fas fa-vector-square"></i> 55 м²</span><span><i class="fas fa-bed"></i> 2 Beds</span><span><i class="fas fa-child"></i> Дитяча зона</span></div>
+                        <p data-i18n="r4_desc">Ідеальний варіант для сімейного відпочинку. Дві кімнати та дитячий куточок.</p>
+                        <div class="room-footer">
+                            <span class="price"><span data-i18n="price_from">Від</span> <span class="val">3 800 ₴</span> <span>/ <span data-i18n="price_night">ніч</span></span></span>
+                            <button class="btn-outline book-room-btn" data-i18n="btn_book_now">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card" data-room="junior" data-price="3200">
+                    <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800');"></div>
+                    <div class="room-info">
+                        <h3 data-i18n="r5_title">Junior Suite Sea View</h3>
+                        <div class="room-amenities"><span><i class="fas fa-vector-square"></i> 40 м²</span><span><i class="fas fa-bed"></i> 1 King Bed</span><span><i class="fas fa-water"></i> Вид на море</span></div>
+                        <p data-i18n="r5_desc">Просторий номер з власною терасою та панорамним видом на море.</p>
+                        <div class="room-footer">
+                            <span class="price"><span data-i18n="price_from">Від</span> <span class="val">3 200 ₴</span> <span>/ <span data-i18n="price_night">ніч</span></span></span>
+                            <button class="btn-outline book-room-btn" data-i18n="btn_book_now">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card" data-room="jun_prem" data-price="3500">
+                    <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=800');"></div>
+                    <div class="room-info">
+                        <h3 data-i18n="r6_title">Junior Suite Premium</h3>
+                        <div class="room-amenities"><span><i class="fas fa-vector-square"></i> 45 м²</span><span><i class="fas fa-couch"></i> Вітальня</span><span><i class="fas fa-wine-glass"></i> Міні-бар</span></div>
+                        <p data-i18n="r6_desc">Напівлюкс преміум-класу з окремою зоною для відпочинку.</p>
+                        <div class="room-footer">
+                            <span class="price"><span data-i18n="price_from">Від</span> <span class="val">3 500 ₴</span> <span>/ <span data-i18n="price_night">ніч</span></span></span>
+                            <button class="btn-outline book-room-btn" data-i18n="btn_book_now">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card" data-room="luxury" data-price="5500">
+                    <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800');"><span class="badge premium">Premium</span></div>
+                    <div class="room-info">
+                        <h3 data-i18n="r7_title">Luxury Aurelia & Spa</h3>
+                        <div class="room-amenities"><span><i class="fas fa-vector-square"></i> 75 м²</span><span><i class="fas fa-hot-tub"></i> Джакузі</span><span><i class="fas fa-concierge-bell"></i> Room Service</span></div>
+                        <p data-i18n="r7_desc">Преміум апартаменти з власною зоною відпочинку та джакузі.</p>
+                        <div class="room-footer">
+                            <span class="price"><span data-i18n="price_from">Від</span> <span class="val">5 500 ₴</span> <span>/ <span data-i18n="price_night">ніч</span></span></span>
+                            <button class="btn-outline book-room-btn" data-i18n="btn_book_now">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card" data-room="lux_royal" data-price="6200">
+                    <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=800');"><span class="badge premium">Premium</span></div>
+                    <div class="room-info">
+                        <h3 data-i18n="r8_title">Luxury Royal</h3>
+                        <div class="room-amenities"><span><i class="fas fa-vector-square"></i> 90 м²</span><span><i class="fas fa-crown"></i> Королівське ліжко</span><span><i class="fas fa-bath"></i> 2 Ванні</span></div>
+                        <p data-i18n="r8_desc">Ексклюзивний дизайн, простора вітальня та дві ванні кімнати для максимального комфорту.</p>
+                        <div class="room-footer">
+                            <span class="price"><span data-i18n="price_from">Від</span> <span class="val">6 200 ₴</span> <span>/ <span data-i18n="price_night">ніч</span></span></span>
+                            <button class="btn-outline book-room-btn" data-i18n="btn_book_now">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card" data-room="lux_pano" data-price="6800">
+                    <div class="room-img" style="background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/206566089.jpg?k=ef239d7e021c1990939095bf8a743484f28a87213cd4747afa2c50aebb9539b5&o=');"><span class="badge premium">Premium</span></div>
+                    <div class="room-info">
+                        <h3 data-i18n="r9_title">Luxury Panoramic</h3>
+                        <div class="room-amenities"><span><i class="fas fa-vector-square"></i> 100 м²</span><span><i class="fas fa-binoculars"></i> 360° Вид</span><span><i class="fas fa-cocktail"></i> Бар</span></div>
+                        <p data-i18n="r9_desc">Люкс на верхньому поверсі з панорамними вікнами та власним міні-баром.</p>
+                        <div class="room-footer">
+                            <span class="price"><span data-i18n="price_from">Від</span> <span class="val">6 800 ₴</span> <span>/ <span data-i18n="price_night">ніч</span></span></span>
+                            <button class="btn-outline book-room-btn" data-i18n="btn_book_now">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card" data-room="presidential" data-price="8500">
+                    <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800');"><span class="badge premium" style="background:#8e44ad;">VIP</span></div>
+                    <div class="room-info">
+                        <h3 data-i18n="r10_title">Presidential Suite</h3>
+                        <div class="room-amenities"><span><i class="fas fa-vector-square"></i> 150 м²</span><span><i class="fas fa-gem"></i> VIP Сервіс</span><span><i class="fas fa-car"></i> Трансфер</span></div>
+                        <p data-i18n="r10_desc">Найрозкішніший номер готелю. Власний кабінет, тераса та персональний консьєрж.</p>
+                        <div class="room-footer">
+                            <span class="price"><span data-i18n="price_from">Від</span> <span class="val">8 500 ₴</span> <span>/ <span data-i18n="price_night">ніч</span></span></span>
+                            <button class="btn-outline book-room-btn" data-i18n="btn_book_now">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-btn next-btn" id="room-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-i18n="nav_services">Сервіс та Інфраструктура</h2>
+            <div class="services-premium-grid">
+                <div class="srv-card" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800');">
+                    <div class="srv-overlay"></div>
+                    <div class="srv-content">
+                        <i class="fas fa-utensils"></i>
+                        <h3 data-i18n="srv_rest_title">Ресторан "Хвиля"</h3>
+                        <p data-i18n="srv_rest_desc">Сніданки "шведський стіл" та авторська морська кухня від шеф-кухаря.</p>
+                    </div>
+                </div>
+                <div class="srv-card" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800');">
+                    <div class="srv-overlay"></div>
+                    <div class="srv-content">
+                        <i class="fas fa-swimming-pool"></i>
+                        <h3 data-i18n="srv_pool_title">Басейн & СПА</h3>
+                        <p data-i18n="srv_pool_desc">Великий басейн з підігрівом, сауна та масажний кабінет.</p>
+                    </div>
+                </div>
+                <div class="srv-card" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800');">
+                    <div class="srv-overlay"></div>
+                    <div class="srv-content">
+                        <i class="fas fa-umbrella-beach"></i>
+                        <h3 data-i18n="srv_beach_title">Приватний Пляж</h3>
+                        <p data-i18n="srv_beach_desc">Власна закрита зона на березі моря з шезлонгами та рушниками.</p>
+                    </div>
+                </div>
+                <div class="srv-card" style="background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800');">
+                    <div class="srv-overlay"></div>
+                    <div class="srv-content">
+                        <i class="fas fa-glass-martini-alt"></i>
+                        <h3 data-i18n="srv_bar_title">Lounge Бар</h3>
+                        <p data-i18n="srv_bar_desc">Вишукані коктейлі, жива музика та прохолодні напої 24/7.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="offers" class="container section">
+        <h2 class="section-title" data-i18n="nav_offers">Спеціальні пропозиції</h2>
+        <div class="offers-grid">
+            <div class="offer-card">
+                <h3 data-i18n="off_early_title">Раннє бронювання</h3>
+                <p data-i18n="off_early_desc">Забронюйте номер за 30 днів до заїзду та отримайте знижку 15%.</p>
+                <button class="btn-outline offer-btn" data-offer="early" data-i18n="btn_more">Дізнатися більше</button>
+            </div>
+            <div class="offer-card">
+                <h3 data-i18n="off_romance_title">Романтичний вікенд</h3>
+                <p data-i18n="off_romance_desc">Шампанське, фрукти в номер та пізній виїзд у подарунок для закоханих.</p>
+                <button class="btn-outline offer-btn" data-offer="romance" data-i18n="btn_more">Дізнатися більше</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ОНОВЛЕНА ГАЛЕРЕЯ -->
+    <section id="gallery" class="container section">
+        <h2 class="section-title" data-i18n="nav_gallery">Галерея</h2>
+        <div class="gallery-grid">
+            <div class="gallery-img-wrap"><img src="https://media.joinup.travel/storage/hotel/50541/photos/Panorama-De-Lyuks-3.jpg" alt="Готель"></div>
+            <div class="gallery-img-wrap"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800" alt="Ресторан"></div>
+            <div class="gallery-img-wrap"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800" alt="Басейн"></div>
+            <div class="gallery-img-wrap"><img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=800" alt="Інтер'єр"></div>
+            <div class="gallery-img-wrap"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800" alt="Номер"></div>
+            <div class="gallery-img-wrap"><img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=800" alt="Тераса"></div>
+            <div class="gallery-img-wrap"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800" alt="Спальня"></div>
+            <div class="gallery-img-wrap"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=800" alt="Вид на море"></div>
+        </div>
+    </section>
+
+    <!-- ОНОВЛЕНІ ВІДГУКИ (Повернуто 6 початкових відгуків для каруселі) -->
+    <section id="reviews" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-i18n="nav_reviews">Відгуки гостей</h2>
+            <div class="reviews-carousel-wrapper">
+                <button class="carousel-btn prev-btn" id="rev-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="reviews-track" id="reviews-track">
+                    
+                    <div class="review-card">
+                        <div class="rev-header">
+                            <div class="rev-avatar" style="background:#4285F4;">О</div>
+                            <div class="rev-info"><h4>Олександр М.</h4><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+                            <i class="fab fa-google google-icon"></i>
+                        </div>
+                        <p data-i18n="rev_1">Чудовий готель! Неймовірний вид на море, дуже смачні сніданки. Обов'язково повернемося ще раз.</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="rev-header">
+                            <div class="rev-avatar" style="background:#0F9D58;">К</div>
+                            <div class="rev-info"><h4>Катерина В.</h4><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+                            <i class="fab fa-google google-icon"></i>
+                        </div>
+                        <p data-i18n="rev_2">Святкували тут річницю. Шампанське в номер, ідеальна чистота та привітний персонал. SPA зона просто супер.</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="rev-header">
+                            <div class="rev-avatar" style="background:#F4B400;">І</div>
+                            <div class="rev-info"><h4>Ігор Т.</h4><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></div>
+                            <i class="fab fa-google google-icon"></i>
+                        </div>
+                        <p data-i18n="rev_3">Гарне місце для відпочинку на вихідних. Зручна парковка, смачна кухня в ресторані. Трохи повільний Wi-Fi біля басейну.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="rev-header">
+                            <div class="rev-avatar" style="background:#DB4437;">Д</div>
+                            <div class="rev-info"><h4>Дмитро С.</h4><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+                            <i class="fab fa-google google-icon"></i>
+                        </div>
+                        <p data-i18n="rev_4">Відмінне розташування, поруч багато ресторанів. Номер дуже чистий і просторий. Рекомендую!</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="rev-header">
+                            <div class="rev-avatar" style="background:#8E24AA;">М</div>
+                            <div class="rev-info"><h4>Марія Л.</h4><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+                            <i class="fab fa-google google-icon"></i>
+                        </div>
+                        <p data-i18n="rev_5">Найкращий сервіс, який я коли-небудь бачила. Персонал вирішив усі наші запити. Обов'язково приїдемо влітку.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="rev-header">
+                            <div class="rev-avatar" style="background:#009688;">В</div>
+                            <div class="rev-info"><h4>Віталій К.</h4><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></div>
+                            <i class="fab fa-google google-icon"></i>
+                        </div>
+                        <p data-i18n="rev_6">Смачна кава, гарний вид. Трохи шумно ввечері через музику з бару, але загалом враження дуже позитивні.</p>
+                    </div>
+
+                </div>
+                <button class="carousel-btn next-btn" id="rev-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="container section">
+        <div class="feedback-box">
+            <div class="feedback-text">
+                <h2 data-i18n="feed_title">Маєте запитання?</h2>
+                <p data-i18n="feed_desc">Заповніть форму, і наш менеджер зв'яжеться з вами найближчим часом для консультації.</p>
+            </div>
+            <form class="feedback-form" id="feedback-form">
+                <input type="text" placeholder="Ваше ім'я" required data-i18n-placeholder="form_name">
+                <input type="tel" value="+380" required maxlength="13" id="f-phone">
+                <textarea rows="3" placeholder="Ваше повідомлення..." required data-i18n-placeholder="feed_msg"></textarea>
+                <button type="submit" class="btn-main" data-i18n="feed_btn">Відправити</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contacts" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">Aurelia<span>Одеса</span></div>
+                <p data-i18n="foot_desc">Ваш преміальний відпочинок на березі Чорного моря.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://t.me/" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="nav_contacts">Контакти</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> м. Одеса, Приморський бульвар, 1</li>
+                    <li><i class="fas fa-phone"></i> +380 68 111 00 11</li>
+                    <li><i class="fas fa-envelope"></i> booking@aurelia.ua</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="foot_links">Корисні посилання</h4>
+                <ul>
+                    <li><a href="about.html" data-i18n="nav_about">Про готель</a></li>
+                    <li><a href="info.html#rules" data-i18n="foot_rules">Правила проживання</a></li>
+                    <li><a href="info.html#privacy" data-i18n="foot_privacy">Політика конфіденційності</a></li>
+                    <li><a href="info.html#transfer" data-i18n="foot_transfer">Трансфер</a></li>
+                </ul>
+            </div>
+            <div class="footer-col map-col">
+                <p style="font-size: 12px; color: #aaa; margin-bottom: 5px;">GPS: 46.4880° N, 30.7411° E</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2747.508006324867!2d30.738096315598642!3d46.48455197912648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c631970221f57b%3A0xc6822858b99c00b3!2sPrimorsky%20Blvd%2C%20Odesa%2C%20Odes'ka%20oblast%2C%20Ukraine%2C%2065000!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" width="100%" height="160" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Готель Aurelia Одеса. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Модальні вікна -->
+    <div id="modal-auth" class="modal">
+        <div class="modal-body" style="max-width: 400px; text-align: center;">
+            <span class="close-modal" id="close-auth">×</span>
+            <h2 style="margin-bottom: 20px; color: #111;" data-i18n="auth_title">Авторизація</h2>
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab active" data-auth-tab="login" data-i18n="auth_tab_login">Вхід</button>
+                <button type="button" class="auth-tab" data-auth-tab="register" data-i18n="auth_tab_register">Реєстрація</button>
+            </div>
+            <form id="login-form" class="checkout-form auth-pane active" style="text-align: left;">
+                <div class="f-group"><label>Email</label><input type="email" id="login-email" required placeholder="example@mail.com"></div>
+                <div class="f-group"><label data-i18n="auth_pass">Пароль</label><input type="password" id="login-password" required placeholder="••••••••"></div>
+                <button type="submit" class="btn-main btn-full" data-i18n="nav_login">Увійти</button>
+            </form>
+            <form id="register-form" class="checkout-form auth-pane" style="text-align: left;">
+                <div class="f-group"><label data-i18n="auth_name">Ім'я</label><input type="text" id="register-name" required placeholder="Олена"></div>
+                <div class="f-group"><label>Email</label><input type="email" id="register-email" required placeholder="example@mail.com"></div>
+                <div class="f-group"><label data-i18n="auth_pass">Пароль</label><input type="password" id="register-password" required placeholder="••••••••"></div>
+                <div class="f-group"><label data-i18n="auth_pass_confirm">Підтвердіть пароль</label><input type="password" id="register-password2" required placeholder="••••••••"></div>
+                <button type="submit" class="btn-main btn-full" data-i18n="auth_tab_register">Реєстрація</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="modal-dashboard" class="modal">
+        <div class="modal-body" style="max-width: 800px;">
+            <span class="close-modal" id="close-dashboard">×</span>
+            <h2 style="margin-bottom: 20px;" data-i18n="nav_profile">Кабінет</h2>
+            <div class="dashboard-tabs">
+                <button class="dash-tab active" data-tab="tab-profile" data-i18n="dash_profile">Профіль</button>
+                <button class="dash-tab" data-tab="tab-orders" data-i18n="dash_orders">Мої бронювання</button>
+                <button class="dash-tab" data-tab="tab-reviews" data-i18n="dash_reviews">Мої відгуки</button>
+            </div>
+            <div class="dashboard-content">
+                <div id="tab-profile" class="dash-pane active">
+                    <h3 style="margin-bottom: 8px;" data-i18n="dash_hello">Вітаємо в особистому кабінеті!</h3>
+                    <p style="color:#111; font-weight:600; margin-bottom: 4px;"><i class="fas fa-user" style="color:#c5a059; margin-right:6px;"></i><span id="user-name-display"></span></p>
+                    <p style="color: #555; margin-bottom: 20px;">Email: <strong id="user-email-display"></strong></p>
+                    <div class="f-group" style="max-width: 320px;">
+                        <label data-i18n="auth_name">Ім'я</label>
+                        <div class="name-edit-row">
+                            <input type="text" id="profile-name-input" placeholder="Ваше ім'я">
+                            <button type="button" id="btn-save-name" class="btn-outline" style="padding: 0 18px;" data-i18n="btn_save_name">Зберегти</button>
+                        </div>
+                    </div>
+                    <button id="btn-logout" class="btn-outline" style="margin-top: 10px;" data-i18n="btn_logout">Вийти з акаунта</button>
+                </div>
+                <div id="tab-orders" class="dash-pane"><div id="orders-list"></div></div>
+                
+                <div id="tab-reviews" class="dash-pane">
+                    <div class="add-review-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 25px;">
+                        <h4 style="margin-bottom: 15px;" data-i18n="write_review_title">Залишити відгук</h4>
+                        <form id="add-review-form" class="checkout-form" style="margin-top: 0;">
+                            <div class="f-group" style="margin-bottom: 10px;">
+                                <label data-i18n="review_rating">Оцінка</label>
+                                <div class="rating-input" id="rating-stars" style="color: #ccc; font-size: 20px; cursor: pointer;">
+                                    <i class="fas fa-star" data-val="1"></i>
+                                    <i class="fas fa-star" data-val="2"></i>
+                                    <i class="fas fa-star" data-val="3"></i>
+                                    <i class="fas fa-star" data-val="4"></i>
+                                    <i class="fas fa-star" data-val="5"></i>
+                                </div>
+                                <input type="hidden" id="review-score" value="0" required>
+                            </div>
+                            <div class="f-group">
+                                <textarea id="review-text" rows="3" required placeholder="Напишіть ваші враження тут..." data-i18n-placeholder="review_placeholder"></textarea>
+                            </div>
+                            <button type="submit" class="btn-main" data-i18n="btn_submit_review">Опублікувати</button>
+                        </form>
+                    </div>
+                    <h4 style="margin-bottom: 15px;" data-i18n="my_reviews_title">Ваші попередні відгуки</h4>
+                    <div id="reviews-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-info" class="modal"><div class="modal-body"><span class="close-modal" id="close-info">×</span><div id="modal-info-content"></div></div></div>
+    <div id="modal-lightbox" class="modal" style="background: rgba(0,0,0,0.9);"><span class="close-modal" id="close-lightbox" style="color: #fff; right: 20px; top: 20px; font-size: 50px;">×</span><div style="display:flex; justify-content:center; align-items:center; width:100%; height:100%; padding: 20px;"><img id="lightbox-img" src="" alt="Gallery Image" style="max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 12px; box-shadow: 0 0 40px rgba(197, 160, 89, 0.4); border: 2px solid #c5a059;"></div></div>
+    
+    <div id="modal-booking" class="modal">
+        <div class="modal-body">
+            <span class="close-modal" id="close-booking">×</span>
+            <div class="modal-header"><h2 data-i18n="modal_book_title">Оформлення бронювання</h2><p data-i18n="modal_book_sub">Заповніть дані для підтвердження</p></div>
+            <div id="booking-summary" class="booking-summary"></div>
+            <form id="contact-form" class="checkout-form">
+                <div class="form-row">
+                    <div class="f-group"><label data-i18n="form_name">Ім'я</label><input type="text" id="u-name" required placeholder="Іван"></div>
+                    <div class="f-group"><label data-i18n="form_surname">Прізвище</label><input type="text" id="u-surname" required placeholder="Іванов"></div>
+                </div>
+                <div class="form-row">
+                    <div class="f-group"><label data-i18n="form_phone">Телефон</label><input type="tel" id="u-phone" required value="+380" maxlength="13"></div>
+                    <div class="f-group"><label>Email</label><input type="email" id="u-email" required placeholder="example@gmail.com" list="email-domains"><datalist id="email-domains"><option value="@gmail.com"></option><option value="@ukr.net"></option></datalist></div>
+                </div>
+                <div class="f-group"><label data-i18n="form_notes">Особливі побажання (необов'язково)</label><textarea id="u-notes" rows="3" placeholder="Наприклад: дитяче ліжечко, тихий номер..."></textarea></div>
+                <div class="checkbox-group"><input type="checkbox" id="agree-policy" required><label for="agree-policy" data-i18n="form_agree">Я погоджуюсь з <a href="info.html#rules" target="_blank">правилами проживання</a></label></div>
+                <button type="submit" class="btn-main btn-full" data-i18n="form_submit">Підтвердити бронювання</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase SDK (compat mode) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+    <!-- Конфігурація Firebase -->
+    <script src="firebase-config.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
